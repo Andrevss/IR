@@ -1,19 +1,27 @@
 import React, { useState, useEffect} from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import axios from 'axios';
+
 
 export default function Create() {
 
     const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
     const [rendimentos, setRendimentos] = useState('');
 
-    const handleCalcular = () =>{
-        const calculo = {
-            nome: nome,
-            email: email,
-            rendimentos: rendimentos,
+    const handleCalcular = () => {
+        const newUser = {
+          nome: nome,
+          rendimentos: rendimentos,
         };
-
+    
+        axios
+          .post('http://192.168.0.6:3000/user/add', newUser)
+          .then(response => {
+            console.log(response.data); 
+          })
+          .catch(error => {
+            console.error(error);
+          });
     }
 
  return (

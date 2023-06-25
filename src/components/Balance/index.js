@@ -1,14 +1,43 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import axios from 'axios';
+
 
 export default function Balance() {
+
+    const [users, setUsers] = useState([]);
+    const [nome, setNome] = useState('');
+    const [rendimentos, setRendimentos] = useState('');
+
+    const getPosts = async() => {
+        try {
+            axios
+                .get('http://192.168.0.6:3000/user')
+                .then(response => {
+                    setNome(response.data.user);
+                    console.log(nome)
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+            
+        }catch (error){
+            console.log(error)
+        }
+    }
+    
+    useEffect(() =>{
+        getPosts()
+    }, [])
+
  return (
     <View style={styles.container}>
         <View style={styles.item}>
             <Text style={styles.itemTitle}>Rendimentos</Text>
             <View style={styles.content}>
                 <Text style={styles.Symbol}>R$</Text>
-                <Text style={styles.saldo}>1.000</Text>
+                <Text style={styles.saldo}>
+                </Text>
             </View>
         </View>
         <View style={styles.item}>
