@@ -2,6 +2,6 @@ App MeuIr
 
 aplicativo que tem a função de cálcular o valor que você deve pagar de imposto de renda. Inicialmente o app é voltado para os usuários que recebem entre 1918 e 3000 reais anuais. Os usuários que recebem abaixo dessa faixa não tem nada a pagar.
 
-Obs.: Professor, fiz todas as rotas e as chamei na pasta src/components/Edit, mas as rotas de update e delete estão com um problema na hora de receber o id do usuário. Testei a rota no postman e a rota funciona quando insiro o id do usuário manualmente, mas quando coloco apenas ${id} na rota ela da erro e não achei um conteúdo na internet que resolvesse esse problema. 
+Aluno: André Vinicius dos Santos Silva
 
 
