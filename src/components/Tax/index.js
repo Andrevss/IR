@@ -7,15 +7,15 @@ export default function Tax() {
     <Text style={styles.title}>Valores e cálculos</Text>
     <View style={styles.content}>
         <Text style={styles.titleContent}>Alíquota</Text>
-        <Text style={styles.valueContent}>5.2%</Text>
+        <Text style={styles.valueContent}>7.5%</Text>
     </View>
     <View style={styles.content}>
-        <Text style={styles.titleContent}>Débitos</Text>
-        <Text style={styles.valueContent}>R$ 6.000</Text>
+        <Text style={styles.titleContent}>Dedução Simplificada</Text>
+        <Text style={styles.valueContent}>20%</Text>
     </View>
     <View style={styles.content}>
-        <Text style={styles.titleContent}>sei lá dps vejo</Text>
-        <Text style={styles.valueContent}>5.2%</Text>
+        <Text style={styles.titleContent}>Parcela dedutível</Text>
+        <Text style={styles.valueContent}>R$ 142</Text>
     </View>
    </View>
   );

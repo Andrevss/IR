@@ -5,17 +5,17 @@ import axios from 'axios';
 
 export default function Balance() {
 
-    const [users, setUsers] = useState([]);
-    const [nome, setNome] = useState('');
     const [rendimentos, setRendimentos] = useState('');
+
+    const PD = rendimentos - (rendimentos * 0.20);
+    const ir = PD - (PD *0.0175 + (142));
 
     const getPosts = async() => {
         try {
             axios
                 .get('http://192.168.0.6:3000/user')
                 .then(response => {
-                    setNome(response.data.user);
-                    console.log(nome)
+                    setRendimentos(response.data.users[0].rendimentos);
                 })
                 .catch(error => {
                     console.error(error);
@@ -36,15 +36,14 @@ export default function Balance() {
             <Text style={styles.itemTitle}>Rendimentos</Text>
             <View style={styles.content}>
                 <Text style={styles.Symbol}>R$</Text>
-                <Text style={styles.saldo}>
-                </Text>
+                <Text style={styles.saldo}>{rendimentos}</Text>
             </View>
         </View>
         <View style={styles.item}>
             <Text style={styles.itemTitle}>A pagar</Text>
             <View style={styles.content}>
                 <Text style={styles.Symbol}>R$</Text>
-                <Text style={styles.pagar}>1.000</Text>
+                <Text style={styles.pagar}>{ir}</Text>
             </View>
         </View>
     </View>
