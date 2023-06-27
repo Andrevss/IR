@@ -2,6 +2,12 @@ App MeuIr
 
 aplicativo que tem a função de cálcular o valor que você deve pagar de imposto de renda. Inicialmente o app é voltado para os usuários que recebem entre 1918 e 3000 reais anuais. Os usuários que recebem abaixo dessa faixa não tem nada a pagar.
 
+Instruções para uso do app:
+
+Ao baixar o arquivo, execute npx expo init abrindo o terminal do programa.
+Em seguida, instale npm install no mesmo terminal, em seguida execute cd back-end e novamente npm install no terminal.
+Após as instalações, execute expo start no mesmo terminal.
+
 Aluno: André Vinicius dos Santos Silva
 
 
